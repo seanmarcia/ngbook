@@ -20,3 +20,9 @@ function SecondCtrl($scope, Data){
     return m.split("").reverse().join("");
   }
 }
+
+myApp.controller('AddCtrl', function($scope) { 
+  $scope.counter = 0;
+  $scope.add = function(amount) { $scope.counter += amount; }; 
+  $scope.subtract = function(amount) { $scope.counter -= amount; };
+});
