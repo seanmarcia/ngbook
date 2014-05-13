@@ -31,6 +31,11 @@ angular.module('MyApp', [])
       return age < 18 ? 'under aged' : 'adult';
     };
 
+
+    $scope.isSenior = function(age) {
+      return age > 18 ? 'Senior' : 'adult';
+    };
+
     $scope.submit = function() {
       if($scope.myForm.$valid) {
         alert('submitted');
