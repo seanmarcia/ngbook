@@ -10,8 +10,8 @@
   <div class="row">
 
     <div class="left-col" class="page-list" ng-controller="ListCtrl">
-      <a href="" ng-repeat="user in users track by user.id" ng-mouseenter="selectUser(user)" class="user-listing">
-        {{ user.person.first_name }} {{ user.person.last_name }}
+      <a href="" ng-repeat="user in users.users" ng-mouseenter="selectUser(user)" class="user-listing">
+        {{ user.first_name }} {{ user.last_name }}
       </a>
     </div>
 
@@ -20,11 +20,12 @@
         <p>You have <strong>not selected an employee</strong></p>
       </div>
       <div ng-if="currentUser" class="panel row">
-        <img ng-src="{{ currentUser.picture }}" class="col-md-4" />
+        <img ng-src="http://s3.amazonaws.com/chssweb-development/person_images/{{currentUser.id}}/cropped/{{currentUser.picture}}" class="col-md-4" />
         <div class="col-md-8">
           <p><strong>Name: </strong> {{ currentUser.first_name }} {{ currentUser.last_name }}</p>
-          <p><strong>Email: </strong> {{ currentUser.email }}</p>
-          <p><strong>Company: </strong> {{ currentUser.company }}</p>
+          <p><strong>Id: </strong> {{ currentUser.id }}</p>
+          <p><strong>Photo: </strong> {{ currentUser.picture }}</p>
+          <p><strong>Rank: </strong> {{ currentUser.rank }}</p>
         </div>
       </div>
     </div>
