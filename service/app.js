@@ -27,5 +27,14 @@ angular.module('MyApp', [])
                      function($scope, usersService) {
     $scope.$on('userChanged', function(event, user) {
       $scope.currentUser = user;
+      var path = "http://s3.amazonaws.com/chssweb-development/person_images/";
+      var defaultpath = "http://chss.gmu.edu/assets/placeholders/default_bio.jpg"
+      if (!user.picture){
+        $scope.path = defaultpath;
+      }
+      else if (user.picture) {
+        $scope.path = path + user.id + "/cropped/" + user.picture;
+      }
     });
+
   }])
