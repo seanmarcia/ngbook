@@ -15,7 +15,7 @@ angular.module('MyApp', [])
   .controller('ListCtrl', ['$scope', '$rootScope', '$http', 'usersService',
                    function($scope, $rootScope, $http, usersService) {
     $http.get('./users.json').success(function(users) {
-      $scope.users = users;
+      $scope.users = users.users;
     });
 
     $scope.selectUser = function(user) {
