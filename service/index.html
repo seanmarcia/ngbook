@@ -11,7 +11,7 @@
 
     <div class="left-col" class="page-list" ng-controller="ListCtrl">
           <input type="text" ng-model="search">
-      <a href="" ng-repeat="user in users.users | filter:search " ng-mouseenter="selectUser(user)" class="user-listing">
+      <a href="" ng-repeat="user in users | filter:search " ng-mouseenter="selectUser(user)" class="user-listing">
         {{ user.full_name }}
       </a>
     </div>
